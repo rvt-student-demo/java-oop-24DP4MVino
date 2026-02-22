@@ -1,9 +1,13 @@
 package rvt;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.regex.*;
-import java.io.*;
+import java.util.regex.Pattern;
 
 public class TodoList {
     private ArrayList<String> list;
@@ -11,13 +15,13 @@ public class TodoList {
 
     public TodoList() {
         list = new ArrayList<>();
-        loadFromFile();
+        loadFromFile(); // Call method to read tasks from the file
     }
 
     public void add(String task) {
-        list.add(task);
+        list.add(task); // Add the new task to the list
         try (PrintWriter pWriter = new PrintWriter(new FileWriter(filePath, true))) {
-            pWriter.println(getLastId() + "," + task);
+            pWriter.println(getLastId() + "," + task); // Save the new task to the csv file
         } catch (IOException ioe) {
             System.out.println(ioe.getMessage());
         }
@@ -32,8 +36,8 @@ public class TodoList {
     private boolean updateFile() {
         try (PrintWriter pWriter = new PrintWriter(filePath)) {
             pWriter.println("id,task");
-            for (int i = 0; i < list.size(); i++) {
-                pWriter.println((i + 1) + "," + list.get(i));
+            for (int i = 0; i < list.size(); i++) { // Loop to write all current tasks
+                pWriter.println((i + 1) + "," + list.get(i)); // Save each task with a new ID
             }
             return true;
         } catch (FileNotFoundException fnfe) {
@@ -52,10 +56,10 @@ public class TodoList {
             reader.nextLine();
             while (reader.hasNextLine()) {
                 String row = reader.nextLine();
-                String[] parts = row.split(",");
-                String name = parts[1];
+                String[] parts = row.split(","); // Read one line from the file
+                String name = parts[1]; // Get only the task name "the task itself" part
 
-                list.add(name);
+                list.add(name); // Add the saved task to the list
             }
         } catch (FileNotFoundException e) {
             System.out.println("Error: " + e.getMessage());
@@ -67,6 +71,7 @@ public class TodoList {
     }
 
     public boolean checkEventString(String value) {
+        // Check if string has only letters/numbers/spaces and is 3+ characters long
         if (Pattern.matches("^[a-zA-Z0-9 ]+$", value) && value.length() >= 3) {
             return true;
         } else {

@@ -19,10 +19,10 @@ public class UserInterface {
             if (command.equals("add")) {
                 System.out.print("To add: ");
                 String addTask = scanner.nextLine();
-                if (todoList.checkEventString(addTask)) { // Проверяем перед добавлением
+                if (todoList.checkEventString(addTask)) { // Check if the task string is valid before adding it to the list
                     todoList.add(addTask);
                 } else {
-                    System.out.println("error");
+                    System.out.println("error"); // Show error if validation fails
                 }
             } else if (command.equals("list")) {
                 todoList.print();
