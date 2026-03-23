@@ -1,12 +1,11 @@
 package rvt;
 
-import java.util.Scanner;
-
 public class App {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        TodoList todoList = new TodoList();
-        UserInterface userInterface = new UserInterface(todoList, scanner);
-        userInterface.start();
+        IOU mattsIOU = new IOU();
+        mattsIOU.setSum("Martin", 51.5);
+        mattsIOU.setSum("Martin", 10.5);
+
+        System.out.println(mattsIOU.howMuchDoIOweTo("Martin"));
     }
 }
