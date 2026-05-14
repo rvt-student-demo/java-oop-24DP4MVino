@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kursi>
+
+    <kurss id="K01">
+        <nosaukums>Algoritmesanas un programmesanas pamati</nosaukums>
+        <apraksts>Pamatzinasanas par algoritmiem un logiku</apraksts>
+        <pazniedzejs>Litvjakovs Igors</pazniedzejs>
+        <ilgums_stundas>42</ilgums_stundas>
+        <studentu_skaits>28</studentu_skaits>
+        <limenis>iesaceji</limenis>
+    </kurss>
+
+    <kurss id="K02">
+        <nosaukums>EIKT nozares tehnisko darbu pamatiemanas</nosaukums>
+        <apraksts>Praktiskas iemanas darba ar datortehniku un tikla pamatiem.</apraksts>
+        <pazniedzejs>Kudrins Jurijs</pazniedzejs>
+        <ilgums_stundas>60</ilgums_stundas>
+        <studentu_skaits>30</studentu_skaits>
+        <limenis>iesaceji</limenis>
+    </kurss>
+
+    <kurss id="K03">
+        <nosaukums>Datu bazu tehnologijas</nosaukums>
+        <apraksts>SQL vaicajumu valodas apguve un datu modelesanas pamatprincipi.</apraksts>
+        <pazniedzejs>Matvejeva Jelena</pazniedzejs>
+        <ilgums_stundas>50</ilgums_stundas>
+        <studentu_skaits>29</studentu_skaits>
+        <limenis>videjs</limenis>
+    </kurss>
+
+</kursi>
