@@ -32,6 +32,10 @@ public class Students {
         return epasts;
     }
 
+    public void setEmail(String epasts) {
+        this.epasts = epasts;
+    }
+
     public String getCode() {
         return personasKods;
     }
@@ -44,7 +48,6 @@ public class Students {
         return laiks;
     }
 
-    @Override
     public String toString() {
         return vards + "," + uzvards + "," + epasts + "," + personasKods + "," + datums + "," + laiks; 
     }

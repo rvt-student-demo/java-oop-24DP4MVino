@@ -34,21 +34,20 @@ public class StudentData {
         return null;
     }
 
-    public void edit(String kods, String jaunsVards, String jaunsUzvards) {
+    public void edit(String kods, String jaunsVards, String jaunsUzvards, String jaunsEpasts) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getCode().equals(kods)) {
                 Students students = list.get(i);
                 students.setName(jaunsVards);
                 students.setSurname(jaunsUzvards);
+                students.setEmail(jaunsEpasts);
                 fileHandler.updateFile(list);
                 break;
             }
         }
     }
 
-    public void showAll() {
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println((i + 1) + ". " + list.get(i));
-        }
+    public ArrayList<Students> getStudentList() {
+        return this.list;
     }
 }

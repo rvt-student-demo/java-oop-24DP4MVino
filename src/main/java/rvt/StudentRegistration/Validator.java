@@ -1,7 +1,5 @@
 package rvt.StudentRegistration;
 
-import java.util.regex.*;
-
 public class Validator {
     public static boolean isNameValid(String vards) {
         return vards != null && vards.matches("^[a-zA-Zā-žĀ-Ž]+$") && vards.length() >= 3;
